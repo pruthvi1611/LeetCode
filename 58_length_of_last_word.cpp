@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Solution{
+public:
+    int lengthOfLastWord(string s){
+        int i = s.length() -1 ;
+
+        while(i >=0 && s[i] == ' '){
+            i--;
+        }
+
+        int length =0 ;
+
+        while(i >= 0 && s[i] != ' '){
+            length++;
+            i--;
+        }
+        return length;
+    }
+};
+
+int main(){
+    Solution sol;
+    string sentence;
+    cout << "Enter a String : ";
+    getline(cin,sentence);
+    cout << sol.lengthOfLastWord(sentence);
+
+    return 0;
+}
